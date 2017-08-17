@@ -11,7 +11,7 @@ PPS: You can query only fields that are on EVERY class that implements your anno
 The generated file will include equalTo and notEqualTo methods, that one can use to query a group of classes.
 In a future release the goal is to have every function that a RealmQuery provides.
 
-```
+```Java
 @PolyQuery
 interface MyInterface extends RealmModel { .. }
 
