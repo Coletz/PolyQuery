@@ -13,8 +13,6 @@ android/gen/
 
 ## Gradle
 .gradle
-gradlew*
-gradlew
 gradle-app.settings
 gradle/
 build/
