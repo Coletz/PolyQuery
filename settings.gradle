@@ -1,1 +1,1 @@
-include ':app', ':polyquery-compiler', ':polyquery'
+include ':polyquery-compiler', ':polyquery'
