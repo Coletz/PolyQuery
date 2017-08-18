@@ -12,10 +12,11 @@ The generated file will include equalTo and notEqualTo methods, that one can use
 In a future release the goal is to have every function that a RealmQuery provides.
 
 ```Java
-@PolyQuery
 interface MyInterface extends RealmModel { .. }
 
+@PolyQuery(MyInterface.class)
 class MyFirstClass extends MyInterface { .. }
+@PolyQuery(MyInterface.class)
 class MySecondClass extends MyInterface { .. }
 
 ..
