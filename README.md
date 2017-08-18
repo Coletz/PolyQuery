@@ -15,9 +15,9 @@ In a future release the goal is to have every function that a RealmQuery provide
 interface MyInterface extends RealmModel { .. }
 
 @PolyQuery(MyInterface.class)
-class MyFirstClass extends MyInterface { .. }
+class MyFirstClass implements MyInterface { .. }
 @PolyQuery(MyInterface.class)
-class MySecondClass extends MyInterface { .. }
+class MySecondClass implements MyInterface { .. }
 
 ..
 
