@@ -1,11 +1,28 @@
+## Java
 *.class
+*.war
+*.ear
+hs_err_pid*
+
+## Android Studio
+android/libs/
+android/gen/
 *.iml
+*.iws
+*.ipr
+
+## Gradle
 .gradle
-/local.properties
-/.idea/*
-/.idea/workspace.xml
-/.idea/libraries
+gradlew*
+gradlew
+gradle-app.settings
+gradle/
+build/
+gradle.properties
+local.properties
+.idea/
+
+## Other
 .DS_Store
-/build
-/captures
+captures/
 .externalNativeBuild
