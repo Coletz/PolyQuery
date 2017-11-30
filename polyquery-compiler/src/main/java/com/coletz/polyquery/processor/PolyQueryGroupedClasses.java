@@ -101,6 +101,7 @@ class PolyQueryGroupedClasses {
 
         MethodSpec queryMethod = createQueryMethod(superClassName);
         MethodSpec queryFirstMethod = createQueryFirstMethod(superClassName);
+        MethodSpec countMethod = createCountMethod(superClassName);
 
         TypeSpec.Builder typeSpec = mainBuilder.addModifiers(Modifier.PUBLIC);
                 //.addTypeVariable(TypeVariableName.get("T", realmModelClass));
@@ -193,6 +194,29 @@ class PolyQueryGroupedClasses {
         method.addStatement("    if(retVal != null){", superClassName.getSimpleName());
         method.addStatement("        return retVal", superClassName.getSimpleName());
         method.addStatement("    }", superClassName.getSimpleName());
+        method.addStatement("}");
+
+        method.addStatement("return retVal", superClassName);
+
+        return method.build();
+    }
+
+    private MethodSpec createCountMethod(TypeElement superClassName) {
+        MethodSpec.Builder method = MethodSpec.methodBuilder("count")
+                .addModifiers(Modifier.PUBLIC)
+                .returns(TypeName.LONG);
+
+        method.addStatement("Long retVal = 0", superClassName.getSimpleName());
+
+        method.addStatement("ArrayList<Class> classesList = new $T<>()", ArrayList.class);
+        for (Map.Entry<String, PolyQueryAnnotatedClass> entry : itemsMap.entrySet()){
+            ClassName cn = ClassName.get(elementUtils.getPackageOf(entry.getValue().getTypeElement().getEnclosingElement()).toString(), entry.getKey());
+            method.addStatement("classesList.add($T.class)",cn);
+        }
+        method.addStatement("for(Class cl : classesList){");
+        method.addStatement("    $T<$T> query = realm.where(cl)", realmQueryClass, superClassName);
+        method.addStatement("    query = addAllParameters(query)");
+        method.addStatement("    retVal += query.count()){");
         method.addStatement("}");
 
         method.addStatement("return retVal", superClassName);

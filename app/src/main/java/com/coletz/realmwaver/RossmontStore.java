@@ -7,7 +7,16 @@ import io.realm.Realm;
 
 class RossmontStore {
 
-    Waver order(Realm realm, String serial){
+    private Realm realm
+
+    public RossmontStore(Realm realm){
+        this.realm = realm
+    }
+
+    Waver order(String serial){
         return new WaverPolyQuery(realm).equalTo("serial", serial).queryFirst();
+    }
+    Waver count(){
+        return new WaverPolyQuery(realm).count();
     }
 }

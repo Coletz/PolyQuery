@@ -23,7 +23,6 @@ public class MainActivity extends Activity {
 
     private TextView billTextView;
     private EditText billEditText;
-    private Button random;
     private RossmontStore store;
     private Realm realm;
 
@@ -34,10 +33,10 @@ public class MainActivity extends Activity {
         Realm.init(this);
         realm = Realm.getInstance(new RealmConfiguration.Builder().build());
 
-        store = new RossmontStore();
+        store = new RossmontStore(realm);
         billTextView = findViewById(R.id.textView);
         billEditText = findViewById(R.id.editText);
-        random = findViewById(R.id.random);
+        Button random = findViewById(R.id.random);
 
         billEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -45,7 +44,8 @@ public class MainActivity extends Activity {
                 boolean handled = false;
                 if (actionId == EditorInfo.IME_ACTION_SEND) {
                     try {
-                        Waver waver = store.order(realm, textView.getText().toString());
+                        Waver waver = store.count();
+                        Waver waver = store.order(textView.getText().toString());
                         String txt = "";
                         if(waver instanceof WaverMaster){
                             txt = ((WaverMaster)waver).getChildId();
