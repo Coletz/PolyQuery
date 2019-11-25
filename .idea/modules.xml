@@ -3,10 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/polyquery.iml" filepath="$PROJECT_DIR$/.idea/modules/polyquery.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/polyquery/polyquery.iml" filepath="$PROJECT_DIR$/.idea/modules/polyquery/polyquery.iml" />
       <module fileurl="file://$PROJECT_DIR$/polyquery/polyquery.iml" filepath="$PROJECT_DIR$/polyquery/polyquery.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/polyquery-compiler/polyquery-compiler.iml" filepath="$PROJECT_DIR$/.idea/modules/polyquery-compiler/polyquery-compiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/polyquery-compiler/polyquery-compiler.iml" filepath="$PROJECT_DIR$/polyquery-compiler/polyquery-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/polyquery/polyquery-polyquery.iml" filepath="$PROJECT_DIR$/.idea/modules/polyquery/polyquery-polyquery.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/realm-waver.iml" filepath="$PROJECT_DIR$/.idea/modules/realm-waver.iml" />
       <module fileurl="file://$PROJECT_DIR$/realm-waver.iml" filepath="$PROJECT_DIR$/realm-waver.iml" />
     </modules>

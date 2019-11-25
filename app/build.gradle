@@ -30,8 +30,6 @@ dependencies {
 
     compile 'io.reactivex:rxjava:1.1.0'
 
-    //compile 'com.github.coletz:polyquery:0.0.1'
-
     annotationProcessor project(':polyquery-compiler')
     compile project(':polyquery')
 
